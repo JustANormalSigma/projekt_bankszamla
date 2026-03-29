@@ -31,3 +31,25 @@ class Account
         naplo.Add(bejegyzes);
     }
 
+    public void Deposit(double osszeg)
+    {
+        if (osszeg > 0)
+        {
+            egyenleg += osszeg;
+            Naplozas("befizetés", osszeg);
+        }
+    }
+
+    public bool Withdraw(double osszeg)
+    {
+        if (osszeg > 0 && egyenleg + hitelkeret >= osszeg)
+        {
+            egyenleg -= osszeg;
+            Naplozas("kifizetés", osszeg);
+            return true;
+        }
+        return false;
+    }
+
+}
+
