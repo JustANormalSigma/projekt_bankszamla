@@ -83,6 +83,10 @@ class Account
         sw.Close();
     }
 
+    public override string ToString()
+    {
+        return "Név: " + nev + " | Számlaszám: " + szamlaszam + " | Egyenleg: " + egyenleg + " Ft | Hitel: " + hitelkeret + " Ft";
+    }
 
 }
 
