@@ -51,5 +51,29 @@ class Account
         return false;
     }
 
+
+    public bool Utalas(Account celSzamla, double osszeg)
+    {
+        if (this.Withdraw(osszeg))
+        {
+            celSzamla.Deposit(osszeg);
+            return true;
+        }
+        return false;
+    }
+
+    public bool HitelkeretModositasa(double ujKeret)
+    {
+        if (ujKeret >= 0 && ujKeret <= nyitoEgyenleg * 0.2)
+        {
+            hitelkeret = ujKeret;
+            Naplozas("hitelkeret módosítása", ujKeret);
+            return true;
+        }
+        return false;
+    }
+
 }
+
+
 
