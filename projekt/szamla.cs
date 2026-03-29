@@ -73,6 +73,17 @@ class Account
         return false;
     }
 
+    public void NaploFajlbaIr()
+    {
+        StreamWriter sw = new StreamWriter(szamlaszam + ".txt");
+        foreach (string sor in naplo)
+        {
+            sw.WriteLine(sor);
+        }
+        sw.Close();
+    }
+
+
 }
 
 
