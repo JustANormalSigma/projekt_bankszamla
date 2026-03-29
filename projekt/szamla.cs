@@ -25,3 +25,9 @@ class Account
         return szamlaszam;
     }
 
+    private void Naplozas(string tipus, double osszeg)
+    {
+        string bejegyzes = DateTime.Now.ToString() + ";" + tipus + ";" + osszeg + ";" + egyenleg;
+        naplo.Add(bejegyzes);
+    }
+
