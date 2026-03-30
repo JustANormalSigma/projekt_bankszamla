@@ -23,7 +23,7 @@ namespace projekt
             sr.Close();
         }
 
-    static Account Keres()
+        static Account Keres()
         {
             Console.Write("számlaszáma: ");
             string id = Console.ReadLine();
@@ -33,5 +33,18 @@ namespace projekt
             }
             return null;
         }
+    
+    static double Bekeres(string uzenet)
+        {
+            Console.Write(uzenet);
+            double szam;
+            while (!double.TryParse(Console.ReadLine(), out szam) || szam < 0)
+            {
+                Console.Write("Érvényes pozitív számot adj meg: ");
+            }
+            return szam;
+        }
+
+
     }
 }
