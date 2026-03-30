@@ -22,5 +22,16 @@ namespace projekt
             }
             sr.Close();
         }
+
+    static Account Keres()
+        {
+            Console.Write("számlaszáma: ");
+            string id = Console.ReadLine();
+            foreach (Account sz in szamlak)
+            {
+                if (sz.GetSzamlaszam() == id) return sz;
+            }
+            return null;
+        }
     }
 }
